@@ -1,0 +1,3 @@
+crm-app/build/*.*
+crm-app/node_modules/*
+project-name/vendor/*
