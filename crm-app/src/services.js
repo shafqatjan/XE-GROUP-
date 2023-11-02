@@ -39,22 +39,22 @@ export const login = (email, password) => {
 };
 // Function to fetch the list of employees
 export const fetchEmployeeList = () => {
-  return api.get(`${API_URL}/employees`);
+  return api.get(`/employees`);
 };
 
 // Function to edit an employee
 export const editEmployee = (employee) => {
-  return api.put(`${API_URL}/employees/${employee.id}`, employee);
+  return api.put(`/employees/${employee.id}`, employee);
 };
 
 // Function to delete an employee
 export const deleteEmployee = (employeeId) => {
-  return api.delete(`${API_URL}/employees/${employeeId}`);
+  return api.delete(`/employees/${employeeId}`);
 };
 
 // Function to add a new employee
 export const addEmployee = (employee) => {
-  return api.post(`${API_URL}/employees`, employee);
+  return api.post(`/employees`, employee);
 };
 export async function fetchCompanyList() {
   try {
@@ -64,4 +64,18 @@ export async function fetchCompanyList() {
     throw error;
   }
 }
+// Function to add a new company
+export const addCompany = (companyData) => {
+  return axios.post(`/companies`, companyData);
+};
+
+// Function to edit an existing company
+export const editCompany = (companyData) => {
+  return axios.put(`/companies/${companyData.id}`, companyData);
+};
+
+// Function to delete a company by its ID
+export const deleteCompany = (companyId) => {
+  return axios.delete(`/companies/${companyId}`);
+};
 export default api;

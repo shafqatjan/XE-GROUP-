@@ -1,5 +1,0 @@
-crm-app/build/*.*
-crm-app/node_modules/*
-project-name/vendor/*
-crm-app/.env
-project-name/.env
