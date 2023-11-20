@@ -39,8 +39,8 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config --local user.email "johnreese103@gmail.com"
-          git config --local user.name "snapxone"
+          git config --local user.email "shafqatjan86@gmail.com"
+          git config --local user.name "Shafqat Jan"
           git add logs.txt
           git commit -m "$(TZ=":Asia/Karachi" date "+%d-%b-%y-%I:%M:%S:%p")"
           git push
