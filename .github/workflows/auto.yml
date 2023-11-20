@@ -13,18 +13,18 @@ jobs:
         with:
           ref: dev
 
-      - name: Check if master branch exists
+      - name: Check if main branch exists
         id: check_branch
         run: |
           sudo apt-get install -y jq
-          BRANCH_EXISTS=$(git ls-remote --heads origin master | wc -l)
+          BRANCH_EXISTS=$(git ls-remote --heads origin main | wc -l)
           echo "::set-output name=branch_exists::$BRANCH_EXISTS"
 
-      - name: Create master branch if not exists
+      - name: Create main branch if not exists
         if: steps.check_branch.outputs.branch_exists == '0'
         run: |
-          git checkout -b master
-          git push -u origin master
+          git checkout -b main
+          git push -u origin main
 
       - name: Switch back to dev branch
         run: |
@@ -39,8 +39,8 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config --local user.email "johnreese103@gmail.com"
-          git config --local user.name "snapxone"
+          git config --local user.email "shafqatjan86@gmail.com"
+          git config --local user.name "Shafqat Jan"
           git add logs.txt
           git commit -m "$(TZ=":Asia/Karachi" date "+%d-%b-%y-%I:%M:%S:%p")"
           git push
@@ -54,7 +54,7 @@ jobs:
             "title":"Update logs.txt",
             "body":"Update logs.txt",
             "head":"dev",
-            "base":"master"
+            "base":"main"
           }')
 
           # Extract the pull request number from the response
